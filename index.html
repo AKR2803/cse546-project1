@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSE546 - Project1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            font-family: system-ui, sans-serif;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        form {
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-bottom: 1rem;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #d4ffcd;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease-in-out;
+        }
+        button:hover {
+            background-color: #145017;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Project 1 - Face Recognition</h1>
+        <p>Please choose an image for Face Recognition</p>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" multiple name="inputFile">
+            <br>
+            <button type="submit">Submit Image</button>
+        </form>
+    </div>
+</body>
+</html>
