@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def handle_upload():
-    # post request
+    # hanfle post request
     if request.method == 'POST':
         print("Inside POST method...")
 
@@ -19,6 +19,7 @@ def handle_upload():
         response = {}
 
         for f1 in input_files:
+            # remove extension part .jpg form filename
             file_name = str(f1.filename).split('.')[0]
             
             # upload file to s3 bucket "1232886878-in-bucket"
@@ -38,7 +39,7 @@ def handle_upload():
         return response_text, 200, {'Content-Type': 'text/plain; charset=utf-8'}
 
     else:
-        # get request form
+        # handle get request
         return '''
         <!DOCTYPE html>
         <html>
@@ -103,5 +104,5 @@ def handle_upload():
         '''
 
 if __name__ == '__main__':
-    # listen on "/" 8000
+    # listen on "/", port 8000
     app.run(host='0.0.0.0', port=8000)
